@@ -1,0 +1,79 @@
+// Objects - Object creation and manipulation
+
+// Create object
+tanga personne = {
+  nom: "Musaba",
+  prenom: "Victor",
+  age: 25,
+  ville: "Kinshasa",
+  pays: "RDC"
+};
+
+// Access object properties
+elobi("Nom: " + personne.nom);
+elobi("Prenom: " + personne.prenom);
+elobi("Age: " + personne.age);
+elobi("Ville: " + personne.ville);
+
+// Modify object properties
+personne.age = 26;
+elobi("Nouvel age: " + personne.age);
+
+// Add new property
+personne.profession = "Ingenieur";
+elobi("Profession: " + personne.profession);
+
+// Nested objects
+tanga adresse = {
+  rue: "Avenue de la Revolution",
+  numero: 123,
+  ville: "Kinshasa",
+  pays: "RDC"
+};
+
+tanga personneComplete = {
+  nom: "Musaba",
+  age: 25,
+  adresse: adresse
+};
+
+elobi("Adresse ville: " + personneComplete.adresse.ville);
+
+// Array of objects
+tanga utilisateurs = [
+  { nom: "Alice", age: 30, ville: "Paris" },
+  { nom: "Bob", age: 25, ville: "Londres" },
+  { nom: "Charlie", age: 35, ville: "Berlin" }
+];
+
+elobi("Utilisateurs:");
+kanda utilisateur dans utilisateurs banda
+  elobi(utilisateur.nom + " - " + utilisateur.ville);
+}
+
+// Object methods
+tanga calculatrice = {
+  additionner: mosala(a, b) banda
+    zonga a + b;
+  },
+  soustraire: mosala(a, b) banda
+    zonga a - b;
+  },
+  multiplier: mosala(a, b) banda
+    zonga a * b;
+  },
+  diviser: mosala(a, b) banda
+    zonga a / b;
+  }
+};
+
+elobi("5 + 3 = " + calculatrice.additionner(5, 3));
+elobi("10 - 4 = " + calculatrice.soustraire(10, 4));
+elobi("6 * 7 = " + calculatrice.multiplier(6, 7));
+elobi("20 / 4 = " + calculatrice.diviser(20, 4));
+
+// Clone object
+tanga original = { nom: "Test", valeur: 42 };
+tanga copie = original;
+elobi("Original: " + original);
+elobi("Copie: " + copie);

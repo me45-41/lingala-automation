@@ -1,0 +1,36 @@
+// Variables and Types - Demonstrates different data types
+
+// Number types
+tanga entier = 42;
+tanga decimal = 3.14;
+tanga negatif = -10;
+
+// String type
+tanga nom = "Musaba";
+tanga prenom = "Victor";
+tanga nomComplet = nom + " " + prenom;
+
+// Boolean type
+tanga estActif = kini;
+tanga estInactif = te;
+
+// Array type
+tanga nombres = [1, 2, 3, 4, 5];
+tanga noms = ["Alice", "Bob", "Charlie"];
+
+// Object type
+tanga personne = {
+  nom: "Musaba",
+  age: 25,
+  ville: "Kinshasa"
+};
+
+// Print all types
+elobi("Entier: " + entier);
+elobi("Decimal: " + decimal);
+elobi("Negatif: " + negatif);
+elobi("Nom complet: " + nomComplet);
+elobi("Est actif: " + estActif);
+elobi("Nombres: " + nombres);
+elobi("Noms: " + noms);
+elobi("Personne: " + personne);

@@ -1,0 +1,119 @@
+// Database Operations - CRUD operations with database
+
+// Connect to database
+sangisa { BaseDeDonnees } depuis "lib/lib-mongo";
+
+tanga db = nouveau BaseDeDonnees("mongodb://localhost:27017/lingala-db");
+
+// Insert document
+mosala creerUtilisateur(nom, email) banda
+  essayer banda
+    tanga utilisateur = {
+      nom: nom,
+      email: email,
+      creeA: kokisaDate()
+    };
+    tanga resultat = db.kokisa("utilisateurs", utilisateur);
+    elobi("Utilisateur cree: " + resultat.id);
+    zonga resultat;
+  } catch erreur bande
+    elobi("Erreur de creation: " + erreur);
+    zonga null;
+  }
+}
+
+// Read document
+mosala kozwaUtilisateur(id) banda
+  essayer banda
+    tanga utilisateur = db.kozwa("utilisateurs", { _id: id });
+    soki utilisateur banda
+      elobi("Utilisateur trouve: " + utilisateur.nom);
+      zonga utilisateur;
+    } osi banda
+      elobi("Utilisateur non trouve");
+      zonga null;
+    }
+  } catch erreur bande
+    elobi("Erreur de lecture: " + erreur);
+    zonga null;
+  }
+}
+
+// Update document
+mosala misAJourUtilisateur(id, nouvellesDonnees) banda
+  essayer banda
+    tanga resultat = db.kosukisa("utilisateurs", { _id: id }, nouvellesDonnees);
+    elobi("Utilisateur mis a jour: " + resultat);
+    zonga resultat;
+  } catch erreur bande
+    elobi("Erreur de mise a jour: " + erreur);
+    zonga null;
+  }
+}
+
+// Delete document
+mosala supprimerUtilisateur(id) banda
+  essayer banda
+    tanga resultat = db.mboka("utilisateurs", { _id: id });
+    elobi("Utilisateur supprime: " + resultat);
+    zonga resultat;
+  } catch erreur bande
+    elobi("Erreur de suppression: " + erreur);
+    zonga null;
+  }
+}
+
+// Query with filters
+mosala kozwaUtilisateursParVille(ville) banda
+  essayer bande
+    tanga utilisateurs = db.kozwaTout("utilisateurs", { ville: ville });
+    elobi("Utilisateurs a " + ville + ": " + utilisateurs.longueur);
+    zonga utilisateurs;
+  } catch erreur bande
+    elobi("Erreur de recherche: " + erreur);
+    zonga [];
+  }
+}
+
+// Aggregate operations
+mosala compterUtilisateurs() bande
+  essayer bande
+    tanga compte = db.compter("utilisateurs");
+    elobi("Total utilisateurs: " + compte);
+    zonga compte;
+  } catch erreur bande
+    elobi("Erreur de comptage: " + erreur);
+    zonga 0;
+  }
+}
+
+// Transaction example
+mosala transfertFonds(compteSource, compteDest, montant) banda
+  essayer banda
+    db.komancer();
+    
+    db.kosukisa("comptes", { _id: compteSource }, { $kisusa: { solde: montant } });
+    db.kosukisa("comptes", { _id: compteDest }, { $kisa: { solde: montant } });
+    
+    db.valider();
+    elobi("Transfert reussi");
+  } catch erreur bande
+    db.annuler();
+    elobi("Transfert echoue: " + erreur);
+  }
+}
+
+// Index creation
+mosala creerIndex() banda
+  essayer bande
+    db.kokisaIndex("utilisateurs", { email: 1 });
+    elobi("Index cree sur email");
+  } catch erreur bande
+    elobi("Erreur de creation d'index: " + erreur);
+  }
+}
+
+// Execute examples
+creerUtilisateur("Alice", "alice@example.com");
+creerUtilisateur("Bob", "bob@example.com");
+compterUtilisateurs();

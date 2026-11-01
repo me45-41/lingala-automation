@@ -1,0 +1,104 @@
+// Auth-Armee - Authentication examples
+
+// Import auth-armee
+sangisa { GestionnaireMFA, GestionnaireRBAC, GestionnaireCertificats, SystemeAuthentification } depuis "auth-armee";
+
+// MFA - Multi-Factor Authentication
+tanga gestionnaireMFA = nouveau GestionnaireMFA();
+
+// Generate TOTP secret
+tanga secret = gestionnaireMFA.genererSecret();
+elobi("Secret TOTP: " + secret);
+
+// Generate OTP code
+tanga codeOTP = gestionnaireMFA.genererOTP(secret);
+elobi("Code OTP: " + codeOTP);
+
+// Verify OTP
+tanga valide = gestionnaireMFA.verifierOTP(secret, codeOTP);
+elobi("OTP valide: " + valide);
+
+// RBAC - Role-Based Access Control
+tanga gestionnaireRBAC = nouveau GestionnaireRBAC();
+
+// Define roles
+gestionnaireRBAC.definirRole("admin", ["tout"]);
+gestionnaireRBAC.definirRole("utilisateur", ["lire", "ecrire"]);
+gestionnaireRBAC.definirRole("invite", ["lire"]);
+
+// Assign role to user
+gestionnaireRBAC.assignerRole("alice", "admin");
+gestionnaireRBAC.assignerRole("bob", "utilisateur");
+gestionnaireRBAC.assignerRole("charlie", "invite");
+
+// Check permission
+tanga permissionAlice = gestionnaireRBAC.verifierPermission("alice", "supprimer");
+elobi("Alice peut supprimer: " + permissionAlice);
+
+tanga permissionBob = gestionnaireRBAC.verifierPermission("bob", "supprimer");
+elobi("Bob peut supprimer: " + permissionBob);
+
+// X.509 Certificates
+tanga gestionnaireCertificats = nouveau GestionnaireCertificats();
+
+// Generate certificate
+tanga certificat = gestionnaireCertificats.genererCertificat({
+  nomCommun: "alice.example.com",
+  organisation: "Example Inc",
+  pays: "RDC"
+});
+elobi("Certificat genere: " + certificat);
+
+// Verify certificate
+tanga valideCert = gestionnaireCertificats.verifierCertificat(certificat);
+elobi("Certificat valide: " + valideCert);
+
+// Key Management System (Vault)
+tanga vault = nouveau GestionnaireCles();
+
+// Store key
+vault.stockerCle("api-key", "secret-api-key-123");
+elobi("Cle stockee");
+
+// Retrieve key
+tanga cleAPI = vault.recupererCle("api-key");
+elobi("Cle recuperee: " + cleAPI);
+
+// User authentication
+tanga systemeAuth = nouveau SystemeAuthentification();
+
+// Register user
+systemeAuth.enregistrerUtilisateur({
+  nom: "alice",
+  email: "alice@example.com",
+  motDePasse: "MotDePasse123!"
+});
+elobi("Utilisateur enregistre");
+
+// Authenticate user
+tanga authResultat = systemeAuth.authentifier("alice", "MotDePasse123!");
+soki authResultat.succes banda
+  elobi("Authentification reussie");
+  elobi("Token: " + authResultat.token);
+} osi banda
+  elobi("Authentification echouee: " + authResultat.erreur);
+}
+
+// Session management
+tanga session = systemeAuth.creerSession("alice");
+elobi("Session cree: " + session.id);
+
+tanga sessionValide = systemeAuth.verifierSession(session.id);
+elobi("Session valide: " + sessionValide);
+
+// Logout
+systemeAuth.deconnecter(session.id);
+elobi("Utilisateur deconnecte");
+
+// Password reset
+systemeAuth.reinitialiserMotDePasse("alice@example.com");
+elobi("Email de reinitialisation envoye");
+
+// Change password
+systemeAuth.changerMotDePasse("alice", "MotDePasse123!", "NouveauMotDePasse456!");
+elobi("Mot de passe change");

@@ -1,0 +1,90 @@
+// File Operations - Reading and writing files
+
+// Read file
+essayer banda
+  tanga contenu = koyokaFichier("test.txt");
+  elobi("Contenu du fichier:");
+  elobi(contenu);
+} catch erreur bande
+  elobi("Erreur de lecture: " + erreur);
+}
+
+// Write file
+essayer banda
+  kobisaFichier("nouveau.txt", "Mbote, mokili!");
+  elobi("Fichier ecrit avec succes");
+} catch erreur bande
+  elobi("Erreur d'ecriture: " + erreur);
+}
+
+// Append to file
+essayer bande
+  kobisaFichier("nouveau.txt", "\nNouvelle ligne", kini);
+  elobi("Contenu ajoute avec succes");
+} catch erreur bande
+  elobi("Erreur d'ajout: " + erreur);
+}
+
+// Check if file exists
+tanga existe = fichierExiste("test.txt");
+elobi("Fichier existe: " + existe);
+
+// Delete file
+essayer banda
+  mbokaFichier("nouveau.txt");
+  elobi("Fichier supprime avec succes");
+} catch erreur bande
+  elobi("Erreur de suppression: " + erreur);
+}
+
+// Read directory
+essayer bande
+  tanga fichiers = koyokaDossier(".");
+  elobi("Fichiers dans le dossier:");
+  kanda fichier dans fichiers banda
+    elobi(fichier);
+  }
+} catch erreur bande
+  elobi("Erreur de lecture du dossier: " + erreur);
+}
+
+// Create directory
+essayer banda
+  kobisaDossier("nouveau-dossier");
+  elobi("Dossier cree avec succes");
+} catch erreur bande
+  elobi("Erreur de creation: " + erreur);
+}
+
+// Delete directory
+essayer bande
+  mbokaDossier("nouveau-dossier");
+  elobi("Dossier supprime avec succes");
+} catch erreur bande
+  elobi("Erreur de suppression: " + erreur);
+}
+
+// Copy file
+essayer banda
+  kobaFichier("source.txt", "destination.txt");
+  elobi("Fichier copie avec succes");
+} catch erreur bande
+  elobi("Erreur de copie: " + erreur);
+}
+
+// Move file
+essayer banda
+  sokisaFichier("source.txt", "destination.txt");
+  elobi("Fichier deplace avec succes");
+} catch erreur bande
+  elobi("Erreur de deplacement: " + erreur);
+}
+
+// Get file info
+essayer banda
+  tanga info = kozwaInfoFichier("test.txt");
+  elobi("Taille: " + info.taille);
+  elobi("Date de modification: " + info.dateModification);
+} catch erreur bande
+  elobi("Erreur d'info: " + erreur);
+}

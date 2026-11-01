@@ -1,0 +1,104 @@
+// Date and Time - Date manipulation and formatting
+
+// Get current date
+tanga maintenant = kokisaDate();
+elobi("Date actuelle: " + maintenant);
+
+// Format date
+tanga dateFormatee = maintenant.kotaFormat("DD/MM/YYYY");
+elobi("Date formatee: " + dateFormatee);
+
+// Create specific date
+tanga dateSpecifique = kokisaDate(2024, 11, 25); // 25 Decembre 2024
+elobi("Date specifique: " + dateSpecifique);
+
+// Add days to date
+tanga demain = maintenant.kisisaJours(1);
+elobi("Demain: " + demain);
+
+// Subtract days from date
+tanga hier = maintenant.kisisaJours(-1);
+elobi("Hier: " + hier);
+
+// Get date components
+tanga annee = maintenant.annee;
+tanga mois = maintenant.mois;
+tanga jour = maintenant.jour;
+tanga heure = maintenant.heure;
+tanga minute = maintenant.minute;
+tanga seconde = maintenant.seconde;
+
+elobi("Annee: " + annee);
+elobi("Mois: " + mois);
+elobi("Jour: " + jour);
+elobi("Heure: " + heure);
+elobi("Minute: " + minute);
+elobi("Seconde: " + seconde);
+
+// Calculate difference between dates
+tanga date1 = kokisaDate(2024, 1, 1);
+tanga date2 = kokisaDate(2024, 12, 31);
+tanga difference = date2.kozwaDifference(date1, "jours");
+elobi("Difference en jours: " + difference);
+
+// Check if date is before/after
+tanga dateFuture = maintenant.kisisaJours(7);
+soki dateFuture > maintenant banda
+  elobi("Date future est apres maintenant");
+}
+
+// Parse date from string
+tanga dateString = "2024-12-25";
+tanga parsedDate = kokisaDateTokaChaine(dateString);
+elobi("Date parsee: " + parsedDate);
+
+// Get day of week
+tanga jourSemaine = maintenant.jourSemaine;
+elobi("Jour de la semaine: " + jourSemaine);
+
+// Get month name
+tanga nomMois = maintenant.nomMois;
+elobi("Mois: " + nomMois);
+
+// Time zone operations
+tanga dateUTC = maintenant.kotaUTC();
+elobi("Date UTC: " + dateUTC);
+
+tanga dateLocale = maintenant.kotaLocale();
+elobi("Date locale: " + dateLocale);
+
+// Add time to date
+tanga plusHeures = maintenant.kisisaHeures(2);
+elobi("Dans 2 heures: " + plusHeures);
+
+tanga plusMinutes = maintenant.kisisaMinutes(30);
+elobi("Dans 30 minutes: " + plusMinutes);
+
+// Check if date is weekend
+tanga estWeekend = maintenant.jourSemaine == 6 || maintenant.jourSemaine == 0;
+elobi("Est weekend: " + estWeekend);
+
+// Get start of day
+tanga debutJour = maintenant.kozwaDebutJour();
+elobi("Debut du jour: " + debutJour);
+
+// Get end of day
+tanga finJour = maintenant.kozwaFinJour();
+elobi("Fin du jour: " + finJour);
+
+// Age calculation
+mosala calculerAge(dateNaissance) banda
+  tanga aujourdHui = kokisaDate();
+  tanga age = aujourdHui.annee - dateNaissance.annee;
+  
+  soki aujourdHui.mois < dateNaissance.mois ||
+     (aujourdHui.mois == dateNaissance.mois && aujourdHui.jour < dateNaissance.jour) banda
+    age = age - 1;
+  }
+  
+  zonga age;
+}
+
+tanga dateNaissance = kokisaDate(1995, 5, 15);
+tanga age = calculerAge(dateNaissance);
+elobi("Age: " + age);

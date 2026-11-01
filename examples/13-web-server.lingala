@@ -1,0 +1,79 @@
+// Web Server - Simple HTTP server
+
+// Create simple server
+mosala demarrerServeur() banda
+  tanga serveur = nouveau Serveur(3000);
+
+  serveur.kotaRoute("/", mosala(req, res) banda
+    res.envoyer("Mbote, mokili!");
+  });
+
+  serveur.kotaRoute("/api/hello", mosala(req, res) banda
+    res.envoyerJSON({
+      message: "Mbote",
+      langage: "LingalaAutomation"
+    });
+  });
+
+  serveur.kotaRoute("/api/users", mosala(req, res) banda
+    tanga utilisateurs = [
+      { id: 1, nom: "Alice" },
+      { id: 2, nom: "Bob" },
+      { id: 3, nom: "Charlie" }
+    ];
+    res.envoyerJSON(utilisateurs);
+  });
+
+  serveur.kotaRoute("/api/users/:id", mosala(req, res) banda
+    tanga id = req.parametres.id;
+    tanga utilisateur = { id: id, nom: "Utilisateur " + id };
+    res.envoyerJSON(utilisateur);
+  });
+
+  serveur.kotaRoute("POST", "/api/users", mosala(req, res) banda
+    tanga donnees = req.corps;
+    tanga nouvelUtilisateur = {
+      id: 4,
+      nom: donnees.nom
+    };
+    res.envoyerJSON(nouvelUtilisateur, 201);
+  });
+
+  serveur.ecouter();
+  elobi("Serveur demarre sur le port 3000");
+}
+
+demarrerServeur();
+
+// Middleware example
+mosala logger(req, res, telemaka) banda
+  elobi(req.methode + " " + req.chemin);
+  telemaka();
+}
+
+mosala auth(req, res, telemaka) banda
+  tanga token = req.entetes["Authorization"];
+  soki token banda
+    telemaka();
+  } osi banda
+    res.envoyer("Non autorise", 401);
+  }
+}
+
+// Server with middleware
+tanga serveur = nouveau Serveur(3000);
+serveur.utiliser(logger);
+serveur.utiliser(auth);
+
+serveur.kotaRoute("/api/protected", mosala(req, res) banda
+  res.envoyerJSON({ message: "Acces autorise" });
+});
+
+// Static files
+serveur.servirStatique("public");
+
+// Error handling
+serveur.gererErreurs(mosala(erreur, req, res) banda
+  elobi("Erreur: " + erreur);
+  res.envoyer("Erreur interne du serveur", 500);
+});

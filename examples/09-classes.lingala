@@ -1,0 +1,106 @@
+// Classes - Object-oriented programming with classes
+
+// Define a simple class
+klasi Personne {
+  // Constructor
+  mosala Personne(nom, age) banda
+    oyo.nom = nom;
+    oyo.age = age;
+  }
+
+  // Method
+  mosala saluer() banda
+    elobi("Mbote, je suis " + oyo.nom + " et j'ai " + oyo.age + " ans");
+  }
+
+  // Method with return
+  mosala estMajeur() banda
+    zonga oyo.age >= 18;
+  }
+}
+
+// Create instance
+tanga personne1 = nouveau Personne("Alice", 25);
+personne1.saluer();
+elobi("Est majeur: " + personne1.estMajeur());
+
+// Class with inheritance
+klasi Animal {
+  mosala Animal(nom) banda
+    oyo.nom = nom;
+  }
+
+  mosala parler() banda
+    elobi(oyo.nom + " fait un bruit");
+  }
+}
+
+klasi Chien kobanda Animal {
+  mosala Chien(nom) banda
+    oyo.super(nom);
+  }
+
+  mosala parler() banda
+    elobi(oyo.nom + " aboie: Wouf!");
+  }
+
+  mosala courir() banda
+    elobi(oyo.nom + " court");
+  }
+}
+
+tanga chien = nouveau Chien("Rex");
+chien.parler();
+chien.courir();
+
+// Class with static method
+klasi MathUtil {
+  mosala statique carre(x) banda
+    zonga x * x;
+  }
+
+  mosala statique cube(x) banda
+    zonga x * x * x;
+  }
+}
+
+elobi("Carre de 5: " + MathUtil.carre(5));
+elobi("Cube de 3: " + MathUtil.cube(3));
+
+// Class with getters and setters
+klasi CompteBancaire {
+  mosala CompteBancaire(soldeInitial) banda
+    oyo._solde = soldeInitial;
+  }
+
+  mosala kozwa solde() banda
+    zonga oyo._solde;
+  }
+
+  mosala kosukola solde(nouveauSolde) banda
+    soki nouveauSolde >= 0 banda
+      oyo._solde = nouveauSolde;
+    } osi banda
+      elobi("Solde negatif non autorise");
+    }
+  }
+
+  mosala deposer(montant) banda
+    oyo._solde = oyo._solde + montant;
+  }
+
+  mosala retirer(montant) banda
+    soki montant <= oyo._solde banda
+      oyo._solde = oyo._solde - montant;
+    } osi banda
+      elobi("Fonds insuffisants");
+    }
+  }
+}
+
+tanga compte = nouveau CompteBancaire(1000);
+elobi("Solde initial: " + compte.solde);
+compte.deposer(500);
+elobi("Apres depot: " + compte.solde);
+compte.retirer(200);
+elobi("Apres retrait: " + compte.solde);

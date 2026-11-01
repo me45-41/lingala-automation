@@ -1,0 +1,65 @@
+// Functions - Define and use functions
+
+// Simple function without parameters
+mosala saluer() banda
+  elobi("Mbote, mokili!");
+}
+
+// Call the function
+saluer();
+
+// Function with parameters
+mosala saluerPersonne(nom) banda
+  elobi("Mbote, " + nom + "!");
+}
+
+saluerPersonne("Alice");
+saluerPersonne("Bob");
+
+// Function with return value
+mosala additionner(a, b) banda
+  zonga a + b;
+}
+
+tanga resultat = additionner(10, 20);
+elobi("10 + 20 = " + resultat);
+
+// Function with multiple parameters
+mosala calculerSurface(longueur, largeur) banda
+  zonga longueur * largeur;
+}
+
+tanga surface = calculerSurface(5, 3);
+elobi("Surface: " + surface);
+
+// Function with default parameter
+mosala afficherMessage(message, fois = 1) banda
+  kanda i depuis 0 awa fois banda
+    elobi(message);
+  }
+}
+
+afficherMessage("Hello", 3);
+afficherMessage("World");
+
+// Function that returns object
+mosala creerPersonne(nom, age) banda
+  zonga {
+    nom: nom,
+    age: age
+  };
+}
+
+tanga personne = creerPersonne("Musaba", 25);
+elobi("Personne: " + personne);
+
+// Recursive function
+mosala factorielle(n) banda
+  soki n <= 1 banda
+    zonga 1;
+  }
+  zonga n * factorielle(n - 1);
+}
+
+tanga fact = factorielle(5);
+elobi("Factorielle de 5 = " + fact);

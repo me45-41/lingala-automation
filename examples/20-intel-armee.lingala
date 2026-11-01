@@ -1,0 +1,136 @@
+// Intel-Armee - Security intelligence examples
+
+// Import intel-armee
+sangisa { GestionnaireLogsSecurises, DetecteurAnomalies, AnalyseurMenaces, SystemeMonitoring, SystemeIntelligenceSecurite } depuis "intel-armee";
+
+// Secure Logs
+tanga gestionnaireLogs = nouveau GestionnaireLogsSecurises("cle-cryptographie-logs");
+
+// Register event
+gestionnaireLogs.enregistrerEvenement({
+  type: "connexion",
+  utilisateur: "alice",
+  ip: "192.168.1.100",
+  timestamp: kokisaDate()
+});
+elobi("Evenement enregistre");
+
+// Analyze events
+tanga evenements = gestionnaireLogs.analyserEvenements({
+  type: "connexion",
+  utilisateur: "alice"
+});
+elobi("Evenements trouves: " + evenements.longueur);
+
+// Anomaly Detection
+tanga detecteur = nouveau DetecteurAnomalies();
+
+// Configure anomaly detection
+detecteur.configurerSeuil(0.8);
+
+// Detect login anomalies
+tanga anomalieConnexion = detecteur.detecterAnomalieConnexion({
+  utilisateur: "alice",
+  ip: "192.168.1.100",
+  pays: "RDC",
+  heure: "03:00"
+});
+soki anomalieConnexion.estAnomalie banda
+  elobi("Anomalie de connexion detectee!");
+  elobi("Score: " + anomalieConnexion.score);
+}
+
+// Detect unusual file access
+tanga anomalieFichier = detecteur.detecterAnomalieAccesFichier({
+  utilisateur: "alice",
+  fichier: "/etc/passwd",
+  timestamp: kokisaDate()
+});
+soki anomalieFichier.estAnomalie banda
+  elobi("Anomalie d'acces fichier detectee!");
+}
+
+// Threat Analysis
+tanga analyseur = nouveau AnalyseurMenaces();
+
+// Analyze network traffic
+tanga menaceReseau = analyseur.analyserMenaceReseau({
+  ipSource: "192.168.1.100",
+  ipDestination: "10.0.0.1",
+  port: 22,
+  protocole: "SSH"
+});
+elobi("Niveau de menace: " + menaceReseau.niveau);
+
+// Analyze user behavior
+tange menaceComportement = analyseur.analyserMenaceComportement({
+  utilisateur: "alice",
+  actions: ["lire", "ecrire", "supprimer", "supprimer", "supprimer"]
+});
+elobi("Menace comportementale: " + menaceComportement.estMenace);
+
+// System Monitoring
+tanga monitoring = nouveau SystemeMonitoring();
+
+// Monitor CPU
+tanga cpuUsage = monitoring.verifierCPU();
+elobi("Utilisation CPU: " + cpuUsage + "%");
+
+// Monitor memory
+tanga memoireUsage = monitoring.verifierMemoire();
+elobi("Utilisation memoire: " + memoireUsage + "%");
+
+// Monitor disk
+tanga disqueUsage = monitoring.verifierDisque();
+elobi("Utilisation disque: " + disqueUsage + "%");
+
+// Monitor network
+tanga reseauUsage = monitoring.verifierReseau();
+elobi("Trafic reseau: " + reseauUsage + " MB/s");
+
+// Intelligence Security System
+tanga systemeIntel = nouveau SystemeIntelligenceSecurite();
+
+// Initialize system
+systemeIntel.initialiser();
+
+// Add monitoring rules
+systemeIntel.ajouterRegle({
+  type: "tentative_intrusion",
+  condition: "tentatives_connexion > 5",
+  action: "bloquer_ip"
+});
+
+// Run security scan
+tanga rapport = systemeIntel.executerScan();
+elobi("Scan complete");
+elobi("Menaces detectees: " + rapport.menacesDetectees);
+elobi("Anomalies detectees: " + rapport.anomaliesDetectees);
+
+// Generate security report
+tanga rapportSecurite = systemeIntel.genererRapportSecurite();
+elobi("Rapport de securite genere");
+elobi("Score global: " + rapportSecurite.scoreGlobal);
+elobi("Recommandations: " + rapportSecurite.recommandations);
+
+// Real-time monitoring
+systemeIntel.demarrerMonitoringTempsReel();
+elobi("Monitoring temps reel demarre");
+
+// Stop monitoring
+systemeIntel.arreterMonitoringTempsReel();
+elobi("Monitoring temps reel arrete");
+
+// Incident response
+tanga incident = {
+  type: "intrusion",
+  severite: "critique",
+  description: "Tentative d'intrusion detectee"
+};
+systemeIntel.repondreIncident(incident);
+elobi("Reponse a l'incident envoyee");
+
+// Security audit
+tanga audit = systemeIntel.executerAudit();
+elobi("Audit de securite complete");
+elobi("Conformite: " + audit.estConforme);

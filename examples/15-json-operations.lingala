@@ -1,0 +1,106 @@
+// JSON Operations - JSON parsing and serialization
+
+// Parse JSON string
+tanga jsonString = '{"nom": "Musaba", "age": 25, "ville": "Kinshasa"}';
+tanga objet = kotaJSON(jsonString);
+elobi("Nom: " + objet.nom);
+elobi("Age: " + objet.age);
+elobi("Ville: " + objet.ville);
+
+// Serialize object to JSON
+tanga personne = {
+  nom: "Alice",
+  age: 30,
+  ville: "Paris"
+};
+tanga jsonString2 = kotaChaineJSON(personne);
+elobi("JSON: " + jsonString2);
+
+// Parse array JSON
+tanga jsonArray = '[1, 2, 3, 4, 5]';
+tanga tableau = kotaJSON(jsonArray);
+elobi("Tableau: " + tableau);
+
+// Serialize array to JSON
+tanga nombres = [10, 20, 30, 40, 50];
+tanga jsonNombres = kotaChaineJSON(nombres);
+elobi("JSON nombres: " + jsonNombres);
+
+// Parse nested JSON
+tanga jsonNested = '{"utilisateur": {"nom": "Bob", "adresse": {"ville": "Londres"}}}';
+tanga data = kotaJSON(jsonNested);
+elobi("Ville: " + data.utilisateur.adresse.ville);
+
+// Handle JSON parsing errors
+essayer banda
+  tanga invalidJson = '{nom: "Test"}'; // Invalid JSON
+  tanga parsed = kotaJSON(invalidJson);
+} catch erreur bande
+  elobi("Erreur de parsing JSON: " + erreur);
+}
+
+// Read JSON from file
+essayer bande
+  tanga contenu = koyokaFichier("data.json");
+  tanga data = kotaJSON(contenu);
+  elobi("Donnees lues: " + data);
+} catch erreur bande
+  elobi("Erreur de lecture: " + erreur);
+}
+
+// Write JSON to file
+essayer bande
+  tanga data = {
+    utilisateurs: [
+      { nom: "Alice", age: 25 },
+      { nom: "Bob", age: 30 }
+    ]
+  };
+  tanga jsonString = kotaChaineJSON(data);
+  kobisaFichier("data.json", jsonString);
+  elobi("Donnees ecrites");
+} catch erreur bande
+  elobi("Erreur d'ecriture: " + erreur);
+}
+
+// JSON with special characters
+tanga specialJSON = '{"message": "Mbote, mokili! \\"Quote\\""}';
+tanga parsed = kotaJSON(specialJSON);
+elobi("Message: " + parsed.message);
+
+// Pretty print JSON
+tanga objet = { nom: "Charlie", age: 35 };
+tanga prettyJSON = kotaChaineJSON(objet, 2);
+elobi("Pretty JSON:");
+elobi(prettyJSON);
+
+// Merge JSON objects
+tanga obj1 = { nom: "Test", valeur: 42 };
+tanga obj2 = { age: 25, ville: "Kinshasa" };
+tanga merged = { ...obj1, ...obj2 };
+elobi("Merged: " + merged);
+
+// Query JSON data
+tanga utilisateurs = [
+  { nom: "Alice", age: 25, ville: "Paris" },
+  { nom: "Bob", age: 30, ville: "Londres" },
+  { nom: "Charlie", age: 35, ville: "Berlin" }
+];
+
+// Filter users over 30
+tanga usersOver30 = utilisateurs.kosala(mosala(u) banda
+  zonga u.age > 30;
+});
+elobi("Users over 30: " + usersOver30);
+
+// Map user names
+tanga noms = utilisateurs.kosala(mosala(u) banda
+  zonga u.nom;
+});
+elobi("Noms: " + noms);
+
+// Reduce to calculate total age
+tanga totalAge = utilisateurs.kokanda(mosala(acc, u) banda
+  zonga acc + u.age;
+}, 0);
+elobi("Total age: " + totalAge);

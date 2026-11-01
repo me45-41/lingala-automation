@@ -1,0 +1,48 @@
+// Conditional Statements - if/else logic
+
+// Simple if statement
+tanga age = 25;
+
+soki age >= 18 banda
+  elobi("Oyo mukili moko ya makambo");
+}
+
+// if-else statement
+tanga score = 75;
+
+soki score >= 90 banda
+  elobi("Grade: A");
+} osi soki score >= 80 banda
+  elobi("Grade: B");
+} osi soki score >= 70 banda
+  elobi("Grade: C");
+} osi soki score >= 60 banda
+  elobi("Grade: D");
+} osi banda
+  elobi("Grade: F");
+}
+
+// if-else with boolean
+tanga estConnecte = kini;
+
+soki estConnecte banda
+  elobi("Utilisateur connecte");
+} osi banda
+  elobi("Utilisateur non connecte");
+}
+
+// Nested if statements
+tanga temperature = 25;
+tanga estSoleil = kini;
+
+soki temperature > 30 banda
+  soki estSoleil banda
+    elobi("Jours chaud et ensoleille");
+  } osi banda
+    elobi("Jours chaud et nuageux");
+  }
+} osi soki temperature < 10 banda
+  elobi("Jours froid");
+} osi banda
+  elobi("Jours tempere");
+}

@@ -1,0 +1,79 @@
+// Crypto-Armee - Cryptography examples
+
+// Import crypto-armee
+sangisa { CrypteurAES, CrypteurRSA, HashCryptographique } depuis "crypto-armee";
+
+// AES Encryption
+tanga crypteurAES = nouveau CrypteurAES("ma-cle-secrete-32-caracteres-123456");
+
+tanga message = "Mbote, mokili!";
+tanga chiffre = crypteurAES.crypter(message);
+elobi("Chiffre AES: " + chiffre);
+
+tanga dechiffre = crypteurAES.decrypter(chiffre);
+elobi("Dechiffre AES: " + dechiffre);
+
+// RSA Encryption
+tanga crypteurRSA = nouveau CrypteurRSA(4096);
+
+tanga clePublique = crypteurRSA.kozwaClePublique();
+tanga clePrivee = crypteurRSA.kozwaClePrivee();
+
+tanga messageRSA = "Message secret";
+tanga chiffreRSA = crypteurRSA.crypter(messageRSA, clePublique);
+elobi("Chiffre RSA: " + chiffreRSA);
+
+tanga dechiffreRSA = crypteurRSA.decrypter(chiffreRSA, clePrivee);
+elobi("Dechiffre RSA: " + dechiffreRSA);
+
+// Hash SHA-256
+tanga hashSHA256 = HashCryptographique.genererHashSHA256("message");
+elobi("Hash SHA-256: " + hashSHA256);
+
+// Hash SHA-512
+tanga hashSHA512 = HashCryptographique.genererHashSHA512("message");
+elobi("Hash SHA-512: " + hashSHA512);
+
+// Verify hash
+tanga original = "message";
+tanga hash = HashCryptographique.genererHashSHA256(original);
+tanga valide = HashCryptographique.verifierHash(original, hash);
+elobi("Hash valide: " + valide);
+
+// Digital signature
+tanga signature = crypteurRSA.signer("document important", clePrivee);
+elobi("Signature: " + signature);
+
+tanga verifie = crypteurRSA.verifierSignature("document important", signature, clePublique);
+elobi("Signature verifiee: " + verifie);
+
+// Generate random key
+tanga cleAleatoire = CryptoUtils.genererCleAleatoire(32);
+elobi("Cle aleatoire: " + cleAleatoire);
+
+// Generate password
+tanga motDePasse = CryptoUtils.genererMotDePasse(16, kini, kini, kini);
+elobi("Mot de passe: " + motDePasse);
+
+// Diffie-Hellman key exchange
+tanga aliceDH = CryptoUtils.initierDiffieHellman();
+tanga bobDH = CryptoUtils.initierDiffieHellman();
+
+tanga aliceClePublique = aliceDH.genererClePublique();
+tanga bobClePublique = bobDH.genererClePublique();
+
+tanga aliceSecret = aliceDH.genererSecret(bobClePublique);
+tanga bobSecret = bobDH.genererSecret(aliceClePublique);
+
+elobi("Alice secret: " + aliceSecret);
+elobi("Bob secret: " + bobSecret);
+elobi("Secrets egaux: " + (aliceSecret == bobSecret));
+
+// File encryption
+tanga fichierContenu = koyokaFichier("secret.txt");
+tanga fichierChiffre = crypteurAES.crypter(fichierContenu);
+kobisaFichier("secret.enc", fichierChiffre);
+
+// File decryption
+tanga fichierDechiffre = crypteurAES.decrypter(koyokaFichier("secret.enc"));
+kobisaFichier("secret-dec.txt", fichierDechiffre);

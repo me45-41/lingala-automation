@@ -1,0 +1,61 @@
+// Arrays - Array operations and manipulation
+
+// Create arrays
+tanga nombres = [1, 2, 3, 4, 5];
+tanga noms = ["Alice", "Bob", "Charlie"];
+tanga mixte = [1, "deux", kini, 3.14];
+
+// Access array elements
+elobi("Premier element: " + nombres[0]);
+elobi("Deuxieme element: " + nombres[1]);
+
+// Get array length
+elobi("Longueur de nombres: " + nombres.longueur);
+
+// Add elements to array
+nombres.kisa(6);
+nombres.kisa(7);
+elobi("Apres ajout: " + nombres);
+
+// Remove elements from array
+nomes.kimisa(0);
+elobi("Apres suppression: " + noms);
+
+// Loop through array
+elobi("Boucle sur nombres:");
+kanda nombre dans nombres banda
+  elobi(nombre);
+}
+
+// Find element in array
+tanga trouve = nombres.kozwa(3);
+elobi("Element trouve: " + trouve);
+
+// Check if element exists
+tanga existe = nombres.kozwa(10) != -1;
+elobi("10 existe: " + existe);
+
+// Array methods
+tanga nombresInverses = nombres.kisota();
+elobi("Inverse: " + nombresInverses);
+
+tanga nombresTries = nombres.kotanga();
+elobi("Trie: " + nombresTries);
+
+// Multidimensional array
+tanga matrice = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+elobi("Matrice[0][0]: " + matrice[0][0]);
+elobi("Matrice[1][2]: " + matrice[1][2]);
+
+// Loop through multidimensional array
+elobi("Boucle sur matrice:");
+kanda ligne dans matrice banda
+  kanda element dans ligne banda
+    elobi(element);
+  }
+}

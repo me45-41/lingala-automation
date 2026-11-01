@@ -1,0 +1,19 @@
+// Hello World - Basic example
+// This is the simplest program in LingalaAutomation
+
+// Print message to console
+elobi("Mbote, mokili!");
+
+// Variable declaration and printing
+tanga message = "Mbote na LingalaAutomation!";
+elobi(message);
+
+// Number operations
+tanga a = 10;
+tanga b = 20;
+tanga somme = a + b;
+elobi("Somme na " + a + " + " + b + " = " + somme);
+
+// Boolean example
+tanga estVrai = kini;
+elobi("estVrai = " + estVrai);

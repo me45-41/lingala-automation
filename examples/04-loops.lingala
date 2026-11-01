@@ -1,0 +1,48 @@
+// Loops - for and while loops
+
+// For loop with range
+elobi("For loop with range:");
+kanda i depuis 0 awa 10 banda
+  elobi("Iteration: " + i);
+}
+
+// For loop with array
+tanga noms = ["Alice", "Bob", "Charlie"];
+elobi("For loop with array:");
+kanda nom dans noms banda
+  elobi("Nom: " + nom);
+}
+
+// While loop
+elobi("While loop:");
+tanga compteur = 0;
+tokisa compteur < 5 banda
+  elobi("Compteur: " + compteur);
+  compteur = compteur + 1;
+}
+
+// Loop with break
+elobi("Loop with break:");
+kanda i depuis 0 awa 10 banda
+  soki i == 5 banda
+  suka;
+  }
+  elobi("i = " + i);
+}
+
+// Loop with continue
+elobi("Loop with continue:");
+kanda i depuis 0 awa 10 banda
+  soki i % 2 == 0 banda
+  kokota;
+  }
+  elobi("Nombre impair: " + i);
+}
+
+// Nested loops
+elobi("Nested loops:");
+kanda i depuis 1 awa 4 banda
+  kanda j depuis 1 awa 4 banda
+    elobi(i + " x " + j + " = " + (i * j));
+  }
+}

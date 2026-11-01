@@ -1,0 +1,73 @@
+// Strings - String operations and manipulation
+
+// Create strings
+tanga chaine1 = "Mbote, mokili!";
+tanga chaine2 = "LingalaAutomation";
+tanga chaineVide = "";
+
+// String concatenation
+tanga concatenee = chaine1 + " " + chaine2;
+elobi("Concatenee: " + concatenee);
+
+// String length
+elobi("Longueur: " + chaine1.longueur);
+
+// Access characters
+elobi("Premier caractere: " + chaine1[0]);
+elobi("Dernier caractere: " + chaine1[chaine1.longueur - 1]);
+
+// String methods
+tanga majuscules = chaine2.kimena();
+elobi("Majuscules: " + majuscules);
+
+tanga minuscules = chaine2.kikita();
+elobi("Minuscules: " + minuscules);
+
+// Substring
+tanga sousChaine = chaine1.kotya(0, 5);
+elobi("Sous-chaine: " + sousChaine);
+
+// Replace
+tanga remplacee = chaine1.kotisa("mokili", "boto");
+elobi("Remplacee: " + remplacee);
+
+// Split
+tanga mots = chaine1.kokatisa(" ");
+elobi("Mots: " + mots);
+
+// Trim
+tanga avecEspaces = "  Mbote  ";
+tanga sansEspaces = avecEspaces.kokesa();
+elobi("Sans espaces: " + sansEspaces);
+
+// Check if contains
+tanga contient = chaine1.kozwa("mokili") != -1;
+elobi("Contient 'mokili': " + contient);
+
+// Check if starts with
+tanga commencePar = chaine2.komuka("Lingala");
+elobi("Commence par 'Lingala': " + commencePar);
+
+// Check if ends with
+tanga finitPar = chaine2.kokota("Automation");
+elobi("Finit par 'Automation': " + finitPar);
+
+// String interpolation
+tanga nom = "Musaba";
+tanga age = 25;
+tanga message = "Je m'appelle " + nom + " et j'ai " + age + " ans";
+elobi(message);
+
+// Repeat string
+tanga repetee = "Ha ".kokelela(3);
+elobi("Repetee: " + repetee);
+
+// String to number
+tanga nombreChaine = "42";
+tanga nombre = nombreChaine.kotaNombre();
+elobi("Nombre: " + nombre);
+
+// Number to string
+tanga nombre2 = 42;
+tanga chaineNombre = nombre2.kotaChaine();
+elobi("Chaine: " + chaineNombre);

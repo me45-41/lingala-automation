@@ -1,0 +1,101 @@
+// Error Handling - Try-catch and exception handling
+
+// Simple try-catch
+essayer banda
+  tanga resultat = 10 / 0;
+  elobi(resultat);
+} catch erreur banda
+  elobi("Erreur: " + erreur);
+}
+
+// Try-catch with specific error handling
+essayer banda
+  tanga tableau = [1, 2, 3];
+  tanga element = tableau[10];
+  elobi(element);
+} catch erreur banda
+  elobi("Erreur d'index: " + erreur);
+}
+
+// Try-catch-finally
+essayer banda
+  elobi("Ouverture du fichier");
+  // Simulate file operation
+  elobi("Lecture du fichier");
+} catch erreur banda
+  elobi("Erreur: " + erreur);
+} telemaka banda
+  elobi("Fermeture du fichier");
+}
+
+// Throw custom error
+mosala validerAge(age) banda
+  soki age < 0 banda
+    kokota "Age ne peut pas etre negatif";
+  }
+  soki age > 150 banda
+    kokota "Age ne peut pas etre superieur a 150";
+  }
+}
+
+essayer banda
+  validerAge(-5);
+} catch erreur bande
+  elobi("Erreur de validation: " + erreur);
+}
+
+// Nested try-catch
+essayer banda
+  essayer banda
+    tanga x = undefined;
+    elobi(x.propriete);
+  } catch erreur1 banda
+    elobi("Erreur interne: " + erreur1);
+    kokota "Erreur dans le bloc interne";
+  }
+} catch erreur2 banda
+  elobi("Erreur externe: " + erreur2);
+}
+
+// Error handling with object
+essayer banda
+  tanga objet = null;
+  tanga valeur = objet.propriete;
+} catch erreur bande
+  soki erreur.message banda
+    elobi("Message d'erreur: " + erreur.message);
+  }
+  soki erreur.code banda
+    elobi("Code d'erreur: " + erreur.code);
+  }
+  elobi("Erreur: " + erreur);
+}
+
+// Multiple catch blocks (simulated)
+essayer banda
+  tanga fichier = kokisaFichier("inexistant.txt");
+} catch erreur banda
+  soki erreur.message.kozwa("fichier") != -1 banda
+    elobi("Erreur de fichier: " + erreur);
+  } osi soki erreur.message.kozwa("permission") != -1 banda
+    elobi("Erreur de permission: " + erreur);
+  } osi banda
+    elobi("Erreur generale: " + erreur);
+  }
+}
+
+// Try-catch with fallback value
+mosala diviser(a, b) banda
+  essayer banda
+    zonga a / b;
+  } catch erreur bande
+    elobi("Erreur de division: " + erreur);
+    zonga 0;
+  }
+}
+
+tanga resultat1 = diviser(10, 2);
+elobi("10 / 2 = " + resultat1);
+
+tanga resultat2 = diviser(10, 0);
+elobi("10 / 0 = " + resultat2);

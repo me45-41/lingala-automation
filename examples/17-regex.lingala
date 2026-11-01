@@ -1,0 +1,108 @@
+// Regular Expressions - Pattern matching with regex
+
+// Simple regex match
+tanga texte = "Mbote, mokili!";
+tanga motif = /mokili/;
+tanga correspond = motif.kozwa(texte);
+elobi("Correspondance: " + correspond);
+
+// Match email pattern
+tanga email = "musaba@example.com";
+tanga emailMotif = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+soki emailMotif.kozwa(email) banda
+  elobi("Email valide");
+} osi banda
+  elobi("Email invalide");
+}
+
+// Match phone number
+tanga telephone = "+243822738076";
+tanga telMotif = /^\+\d{1,3}\d{9,}$/;
+soki telMotif.kozwa(telephone) banda
+  elobi("Telephone valide");
+} osi banda
+  elobi("Telephone invalide");
+}
+
+// Find all matches
+tanga texte2 = "Les prix sont 100$, 200$, 300$";
+tanga prixMotif = /\d+\$/g;
+tanga prix = texte2.kozwaTout(prixMotif);
+elobi("Prix trouves: " + prix);
+
+// Replace text
+tanga texte3 = "Mbote, Alice. Mbote, Bob.";
+tanga remplace = texte3.kotisa(/Mbote/g, "Salut");
+elobi("Apres remplacement: " + remplace);
+
+// Split by regex
+tanga texte4 = "apple,banana;orange|grape";
+tanga fruits = texte4.kokatisa(/[,;|]/);
+elobi("Fruits: " + fruits);
+
+// Capture groups
+tanga date = "25/12/2024";
+tanga dateMotif = /(\d{2})\/(\d{2})\/(\d{4})/;
+tanga correspondance = dateMotif.kozwa(date);
+soki correspondance banda
+  elobi("Jour: " + correspondance[1]);
+  elobi("Mois: " + correspondance[2]);
+  elobi("Annee: " + correspondance[3]);
+}
+
+// Validate password
+mosala validerMotDePasse(motDePasse) banda
+  tanga longueurMotif = /.{8,}/;
+  tanga majusculeMotif = /[A-Z]/;
+  tanga minusculeMotif = /[a-z]/;
+  tanga chiffreMotif = /\d/;
+  tanga specialMotif = /[!@#$%^&*]/;
+  
+  soki !longueurMotif.kozwa(motDePasse) banda
+    elobi("Mot de passe doit avoir au moins 8 caracteres");
+    zonga te;
+  }
+  soki !majusculeMotif.kozwa(motDePasse) banda
+    elobi("Mot de passe doit avoir une majuscule");
+    zonga te;
+  }
+  soki !minusculeMotif.kozwa(motDePasse) banda
+    elobi("Mot de passe doit avoir une minuscule");
+    zonga te;
+  }
+  soki !chiffreMotif.kozwa(motDePasse) banda
+    elobi("Mot de passe doit avoir un chiffre");
+    zonga te;
+  }
+  soki !specialMotif.kozwa(motDePasse) banda
+    elobi("Mot de passe doit avoir un caractere special");
+    zonga te;
+  }
+  
+  zonga kini;
+}
+
+validerMotDePasse("Test123!");
+
+// Extract URLs from text
+tanga texteURL = "Visitez https://example.com et http://test.org";
+tanga urlMotif = /https?:\/\/[^\s]+/g;
+tanga urls = texteURL.kozwaTout(urlMotif);
+elobi("URLs: " + urls);
+
+// Remove HTML tags
+tanga html = "<p>Mbote <b>mokili</b>!</p>";
+tanga sansHTML = html.kotisa(/<[^>]*>/g, "");
+elobi("Sans HTML: " + sansHTML);
+
+// Case-insensitive match
+tanga texte5 = "Hello HELLO hello";
+tanga motifCI = /hello/gi;
+tanga correspondances = texte5.kozwaTout(motifCI);
+elobi("Correspondances (case-insensitive): " + correspondances);
+
+// Word boundaries
+tanga texte6 = "test testing tester";
+tanga motMotif = /\btest\b/g;
+tanga mots = texte6.kozwaTout(motMotif);
+elobi("Mots 'test': " + mots);

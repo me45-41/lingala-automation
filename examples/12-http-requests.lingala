@@ -1,0 +1,95 @@
+// HTTP Requests - Making HTTP requests
+
+// Simple GET request
+essayer banda
+  tanga reponse = koyoka("https://api.example.com/users");
+  elobi("Status: " + reponse.status);
+  elobi("Data: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur de requete: " + erreur);
+}
+
+// POST request with data
+essayer banda
+  tanga donnees = {
+    nom: "Musaba",
+    email: "musaba@example.com"
+  };
+  tanga reponse = kokisa("https://api.example.com/users", donnees);
+  elobi("User cree: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur de creation: " + erreur);
+}
+
+// PUT request to update
+essayer banda
+  tanga donnees = {
+    nom: "Musaba Mungwari",
+    email: "victor@example.com"
+  };
+  tanga reponse = kosukisa("https://api.example.com/users/1", donnees);
+  elobi("User mis a jour: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur de mise a jour: " + erreur);
+}
+
+// DELETE request
+essayer banda
+  tanga reponse = mboka("https://api.example.com/users/1");
+  elobi("User supprime: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur de suppression: " + erreur);
+}
+
+// Request with headers
+essayer bande
+  tanga entetes = {
+    "Authorization": "Bearer token123",
+    "Content-Type": "application/json"
+  };
+  tanga reponse = koyoka("https://api.example.com/protected", entetes);
+  elobi("Data protegee: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur d'acces: " + erreur);
+}
+
+// Request with query parameters
+essayer bande
+  tanga parametres = {
+    page: 1,
+    limite: 10,
+    tri: "nom"
+  };
+  tanga reponse = koyoka("https://api.example.com/users", parametres);
+  elobi("Users page 1: " + reponse.data);
+} catch erreur bande
+  elobi("Erreur de recherche: " + erreur);
+}
+
+// Async/await pattern (simulated)
+mosala recupererUtilisateur(id) banda
+  essayer banda
+    tanga reponse = koyoka("https://api.example.com/users/" + id);
+    zonga reponse.data;
+  } catch erreur bande
+    elobi("Erreur: " + erreur);
+    zonga null;
+  }
+}
+
+tanga utilisateur = recupererUtilisateur(1);
+soki utilisateur banda
+  elobi("Utilisateur: " + utilisateur);
+}
+
+// Multiple concurrent requests
+essayer banda
+  tanga reponse1 = koyoka("https://api.example.com/users");
+  tanga reponse2 = koyoka("https://api.example.com/posts");
+  tanga reponse3 = koyoka("https://api.example.com/comments");
+  elobi("Users: " + reponse1.data.longueur);
+  elobi("Posts: " + reponse2.data.longueur);
+  elobi("Comments: " + reponse3.data.longueur);
+} catch erreur bande
+  elobi("Erreur de requetes multiples: " + erreur);
+}
