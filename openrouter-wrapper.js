@@ -1,7 +1,7 @@
 // OpenRouter API Wrapper for LingalaAutomation
 // This wrapper uses OpenRouter API to generate LingalaAutomation code
 
-class LingalaAutomationGenerator {
+export class LingalaAutomationGenerator {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseUrl = "https://openrouter.ai/api/v1";
@@ -54,7 +54,7 @@ ALWAYS:
 - Follow the hybrid syntax model (Lingala keywords + JavaScript operators)`;
   }
 
-  async generateCode(prompt, model = "anthropic/claude-3-haiku") {
+  async generateCode(prompt, model = "anthropic/claude-haiku-4.5") {
     try {
       const response = await fetch(`${this.baseUrl}/chat/completions`, {
         method: "POST",
@@ -94,7 +94,7 @@ ALWAYS:
     }
   }
 
-  async translateCode(sourceCode, sourceLanguage = "javascript", model = "anthropic/claude-3-haiku") {
+  async translateCode(sourceCode, sourceLanguage = "javascript", model = "anthropic/claude-haiku-4.5") {
     const prompt = `Translate this ${sourceLanguage} code to LingalaAutomation:
 
 ${sourceCode}
@@ -104,7 +104,7 @@ Use the correct syntax rules for LingalaAutomation. Include type annotations and
     return this.generateCode(prompt, model);
   }
 
-  async explainCode(code, model = "anthropic/claude-3-haiku") {
+  async explainCode(code, model = "anthropic/claude-haiku-4.5") {
     const prompt = `Explain this LingalaAutomation code in detail:
 
 ${code}
@@ -118,7 +118,7 @@ Include:
     return this.generateCode(prompt, model);
   }
 
-  async debugCode(code, model = "anthropic/claude-3-haiku") {
+  async debugCode(code, model = "anthropic/claude-haiku-4.5") {
     const prompt = `Debug this LingalaAutomation code:
 
 ${code}
@@ -134,7 +134,7 @@ Provide corrected code with explanations.`;
     return this.generateCode(prompt, model);
   }
 
-  async generateWithExamples(description, model = "anthropic/claude-3-haiku") {
+  async generateWithExamples(description, model = "anthropic/claude-haiku-4.5") {
     const prompt = `Generate LingalaAutomation code for: ${description}
 
 Provide:
@@ -174,6 +174,4 @@ async function main() {
 }
 
 // Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = LingalaAutomationGenerator;
-}
+export default LingalaAutomationGenerator;

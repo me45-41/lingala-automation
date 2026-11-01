@@ -44,3 +44,8 @@ coverage/
 
 # Convert script
 convert-logo.js
+
+# API keys and test files with secrets
+test-openrouter-with-key.js
+*.key
+*.secret
