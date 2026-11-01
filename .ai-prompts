@@ -1,0 +1,376 @@
+# Optimized AI Prompts for LingalaAutomation
+
+This file contains optimized prompts for AI systems to generate, translate, explain, and debug LingalaAutomation code.
+
+---
+
+## Code Generation Prompts
+
+### Generate Basic Function
+```
+Generate a function in LingalaAutomation that [description]. Use proper syntax: tanga for variables, mosala for functions, soki for conditionals, kanda for loops.
+```
+
+### Generate Class
+```
+Create a class in LingalaAutomation called [ClassName] with [methods]. Use klasi for class, mosala for methods, oyo for this.
+```
+
+### Generate Security Code
+```
+Generate LingalaAutomation code using crypto-armee to [task]. Import from "crypto-armee" and use CrypteurAES or CrypteurRSA.
+```
+
+### Generate Web Server
+```
+Create a simple HTTP server in LingalaAutomation listening on port [port]. Use Serveur class and kotaRoute for routing.
+```
+
+### Generate Database Query
+```
+Write LingalaAutomation code to query a MongoDB database using lib-mongo. Use BaseDeDonnees class and appropriate methods.
+```
+
+---
+
+## Translation Prompts
+
+### JavaScript to LingalaAutomation
+```
+Translate this JavaScript code to LingalaAutomation:
+[JavaScript code]
+
+Use these translations:
+- let/const/var → tanga
+- function → mosala
+- if → soki
+- else → osi
+- for → kanda
+- while → tokisa
+- return → zonga
+- console.log → elobi
+- class → klasi
+- new → kokisa
+- try → essayer
+- catch → catch
+- finally → telemaka
+- break → suka
+- continue → kokota
+```
+
+### Python to LingalaAutomation
+```
+Convert this Python code to LingalaAutomation. Use tanga for variables, mosala for functions, soki for conditionals, kanda for loops.
+```
+
+### LingalaAutomation to JavaScript
+```
+Translate this LingalaAutomation code to JavaScript:
+[LingalaAutomation code]
+
+Reverse the keyword mappings from the translation rules.
+```
+
+---
+
+## Explanation Prompts
+
+### Explain Code
+```
+Explain this LingalaAutomation code in detail:
+[LingalaAutomation code]
+
+Include:
+- What each keyword means in Lingala
+- How the code works
+- Any security features used
+- Best practices demonstrated
+```
+
+### Explain Syntax
+```
+Explain the syntax of [feature] in LingalaAutomation. Compare it with JavaScript and explain the Lingala meaning of the keywords.
+```
+
+### Explain Security Library
+```
+Explain how to use [crypto-armee/auth-armee/intel-armee] in LingalaAutomation. Provide a practical example and explain the security benefits.
+```
+
+---
+
+## Debugging Prompts
+
+### Debug Code
+```
+Debug this LingalaAutomation code:
+[LingalaAutomation code]
+
+Identify:
+- Syntax errors
+- Logic errors
+- Security issues
+- Best practice violations
+
+Provide corrected code with explanations.
+```
+
+### Fix Error
+```
+This LingalaAutomation code is throwing an error: [error message]. Here's the code:
+[LingalaAutomation code]
+
+Fix the error and explain the solution.
+```
+
+### Optimize Code
+```
+Optimize this LingalaAutomation code for performance:
+[LingalaAutomation code]
+
+Suggest improvements for:
+- Performance
+- Readability
+- Security
+- Type safety
+```
+
+---
+
+## Refactoring Prompts
+
+### Refactor for Type Safety
+```
+Refactor this LingalaAutomation code to include type annotations using mboka:
+[LingalaAutomation code]
+
+Add appropriate types for all variables and function parameters.
+```
+
+### Refactor for Security
+```
+Refactor this LingalaAutomation code to use appropriate security libraries:
+[LingalaAutomation code]
+
+Use crypto-armee, auth-armee, or intel-armee as needed.
+```
+
+### Refactor for Readability
+```
+Improve the readability of this LingalaAutomation code:
+[LingalaAutomation code]
+
+Suggest:
+- Better variable names
+- Function decomposition
+- Comments where needed
+- Code organization
+```
+
+---
+
+## Code Review Prompts
+
+### Review Code
+```
+Review this LingalaAutomation code:
+[LingalaAutomation code]
+
+Check for:
+- Syntax correctness
+- Type safety
+- Security best practices
+- Performance issues
+- Code style
+- Potential bugs
+
+Provide a detailed review with suggestions.
+```
+
+### Security Review
+```
+Perform a security review of this LingalaAutomation code:
+[LingalaAutomation code]
+
+Check for:
+- Proper use of crypto-armee
+- Proper use of auth-armee
+- Proper use of intel-armee
+- Common vulnerabilities
+- Best practices
+
+Provide security recommendations.
+```
+
+---
+
+## Testing Prompts
+
+### Generate Tests
+```
+Generate unit tests for this LingalaAutomation function:
+[LingalaAutomation code]
+
+Use the test runner syntax and include edge cases.
+```
+
+### Generate Test Cases
+```
+Create test cases for this LingalaAutomation code:
+[LingalaAutomation code]
+
+Include:
+- Normal cases
+- Edge cases
+- Error cases
+- Security cases
+```
+
+---
+
+## Documentation Prompts
+
+### Generate Documentation
+```
+Generate documentation for this LingalaAutomation code:
+[LingalaAutomation code]
+
+Include:
+- Function descriptions
+- Parameter descriptions
+- Return value descriptions
+- Usage examples
+- Security notes
+```
+
+### Generate API Docs
+```
+Create API documentation for this LingalaAutomation module:
+[LingalaAutomation code]
+
+Follow standard API documentation format with examples.
+```
+
+---
+
+## Learning Prompts
+
+### Teach Concept
+```
+Teach me [concept] in LingalaAutomation. Explain it with examples and compare it with JavaScript.
+```
+
+### Best Practices
+```
+What are the best practices for [task] in LingalaAutomation? Provide examples and explain why they are best practices.
+```
+
+### Common Patterns
+```
+Show common design patterns in LingalaAutomation with examples for:
+- Singleton
+- Factory
+- Observer
+- Strategy
+- Decorator
+```
+
+---
+
+## Integration Prompts
+
+### Database Integration
+```
+Show how to integrate LingalaAutomation with MongoDB. Provide a complete example with connection, query, and error handling.
+```
+
+### API Integration
+```
+Demonstrate how to make HTTP requests in LingalaAutomation. Include GET, POST, PUT, and DELETE examples.
+```
+
+### File Operations
+```
+Show file operations in LingalaAutomation. Include reading, writing, and error handling examples.
+```
+
+---
+
+## Advanced Prompts
+
+### Generate Obfuscated Code
+```
+Generate LingalaAutomation code that demonstrates obfuscation. Explain the obfuscation levels (basique, moyen, eleve, extreme).
+```
+
+### Generate Security Workflow
+```
+Create a complete security workflow in LingalaAutomation using crypto-armee, auth-armee, and intel-armee. Include authentication, encryption, and monitoring.
+```
+
+### Generate Enterprise Application
+```
+Design an enterprise application architecture in LingalaAutomation. Include web server, database, authentication, and monitoring.
+```
+
+---
+
+## Prompt Templates
+
+### Generic Code Generation
+```
+Generate [feature] in LingalaAutomation for [purpose]. Use proper syntax with tanga, mosala, soki, kanda. Include error handling and type annotations.
+```
+
+### Generic Translation
+```
+Translate [source language] code to LingalaAutomation:
+[source code]
+
+Follow the standard keyword mappings and maintain the same logic.
+```
+
+### Generic Explanation
+```
+Explain this LingalaAutomation code in simple terms:
+[LingalaAutomation code]
+
+Break it down line by line and explain the purpose of each part.
+```
+
+---
+
+## Tips for Best Results
+
+1. **Be Specific:** Provide clear, detailed descriptions of what you want
+2. **Include Context:** Explain the purpose and constraints of the code
+3. **Specify Libraries:** Mention if you want to use crypto-armee, auth-armee, or intel-armee
+4. **Request Explanations:** Ask for explanations to understand the generated code
+5. **Iterate:** Refine prompts based on the output you receive
+6. **Provide Examples:** Give examples of similar code if helpful
+7. **Specify Level:** Indicate if you want basic, intermediate, or advanced code
+8. **Mention Security:** Always mention security considerations for sensitive operations
+
+---
+
+## Common Mistakes in Prompts
+
+❌ "Write code" → Too vague
+✅ "Write a function in LingalaAutomation that calculates the factorial of a number using recursion"
+
+❌ "Translate this" → Missing context
+✅ "Translate this JavaScript code to LingalaAutomation for a web server application"
+
+❌ "Fix this" → No explanation
+✅ "Fix this LingalaAutomation code that's throwing a syntax error in the conditional statement"
+
+---
+
+## For Cursor Users
+
+When using Cursor with these prompts:
+1. Create a `.cursorrules` file in your project root
+2. Use the rules defined in `.cursorrules` for consistent code generation
+3. Reference the AI-README.md for detailed syntax information
+4. Use these prompts in Cursor's chat interface
+5. Enable the LingalaAutomation extension for better syntax highlighting

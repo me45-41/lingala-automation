@@ -1,0 +1,141 @@
+# Cursor AI Rules for LingalaAutomation
+
+When writing or generating code in LingalaAutomation, follow these rules:
+
+## Syntax Rules
+
+### Variable Declaration
+- ALWAYS use `tanga` for variable declarations
+- NEVER use `let`, `const`, or `var`
+- Example: `tanga variable = valeur;`
+
+### Function Definition
+- ALWAYS use `mosala` for function definitions
+- NEVER use `function`
+- Example: `mosala fonction() banda ... }`
+
+### Block Structure
+- ALWAYS use `banda` to start blocks
+- ALWAYS use `}` to close blocks
+- NEVER use `suka` for block closure (suka is for break only)
+- Example: `soki condition banda ... }`
+
+### Conditional Statements
+- Use `soki` for if
+- Use `osi` for else
+- Example: `soki condition banda ... } osi banda ... }`
+
+### Loops
+- Use `kanda` for for loops
+- Use `tokisa` for while loops
+- Example: `kanda i depuis 0 awa 10 banda ... }`
+
+### Output
+- Use `elobi` for print/output
+- NEVER use `console.log`
+- Example: `elobi("message");`
+
+### Return
+- Use `zonga` for return
+- NEVER use `return`
+- Example: `zonga valeur;`
+
+### Classes
+- Use `klasi` for class
+- Use `kokisa` for new/instantiate
+- Example: `klasi Personne { ... }` and `nouveau Personne()`
+
+## Type Safety
+
+- Use `mboka` for type annotations when possible
+- Example: `tanga nombre mboka Number = 42;`
+- Prefer type safety over dynamic typing
+
+## Security Best Practices
+
+- Use crypto-armee for encryption: `sangisa { CrypteurAES } depuis "crypto-armee"`
+- Use auth-armee for authentication: `sangisa { GestionnaireMFA } depuis "auth-armee"`
+- Use intel-armee for security monitoring: `sangisa { DetecteurAnomalies } depuis "intel-armee"`
+- Always include error handling with `essayer/catch`
+- Obfuscation is enabled by default (no need to add manually)
+
+## Error Handling
+
+- ALWAYS use `essayer` for try
+- Use `catch` for catch
+- Use `telemaka` for finally
+- Example: `essayer banda ... } catch erreur banda ... }`
+
+## Code Style
+
+- Use meaningful variable names (even in Lingala)
+- Include comments for complex logic
+- Follow the hybrid syntax model (Lingala keywords + JavaScript operators)
+- Keep functions focused and single-purpose
+- Use descriptive function names
+
+## Translation from JavaScript
+
+When translating JavaScript to LingalaAutomation:
+- `let/const/var` → `tanga`
+- `function` → `mosala`
+- `if` → `soki`
+- `else` → `osi`
+- `for` → `kanda`
+- `while` → `tokisa`
+- `return` → `zonga`
+- `console.log` → `elobi`
+- `class` → `klasi`
+- `new` → `kokisa`
+- `try` → `essayer`
+- `catch` → `catch`
+- `finally` → `telemaka`
+- `break` → `suka`
+- `continue` → `kokota`
+
+## Security Considerations
+
+- For encryption: Always use crypto-armee, never manual encryption
+- For authentication: Always use auth-armee, never store plain passwords
+- For logging: Use intel-armee for secure logging in production
+- For obfuscation: Enabled by default, don't need to add manually
+
+## Common Mistakes to Avoid
+
+- ❌ Using `suka` for block closure (use `}` instead)
+- ❌ Using `let/const/var` (use `tanga` instead)
+- ❌ Using `console.log` (use `elobi` instead)
+- ❌ Using `function` (use `mosala` instead)
+- ❌ Forgetting `banda` after conditions
+- ❌ Forgetting type annotations with `mboka`
+
+## Examples
+
+### Correct
+```lingala
+tanga nombre = 42;
+mosala additionner(a, b) banda
+  zonga a + b;
+}
+soki nombre > 10 banda
+  elobi("Grand");
+}
+```
+
+### Incorrect
+```lingala
+let nombre = 42;  // ❌ Use tanga
+function additionner(a, b) {  // ❌ Use mosala banda
+  return a + b;  // ❌ Use zonga
+}
+if nombre > 10 {  // ❌ Use soki banda
+  console.log("Grand");  // ❌ Use elobi
+}
+```
+
+## When in Doubt
+
+1. Check the AI-README.md for detailed documentation
+2. Review the examples in the `examples/` directory
+3. Follow the hybrid syntax model (Lingala keywords + JavaScript operators)
+4. Prioritize type safety and security
