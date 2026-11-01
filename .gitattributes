@@ -1,0 +1,10 @@
+# Git attributes for LingalaAutomation
+
+# Force GitHub Linguist to recognize .lingala files
+*.lingala linguist-language=LingalaAutomation
+
+# Alternative: Treat as JavaScript temporarily (uncomment if needed)
+# *.lingala linguist-language=JavaScript
+
+# Mark all LingalaAutomation files as programming language
+*.lingala linguist-detectable=true
