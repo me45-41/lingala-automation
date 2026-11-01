@@ -1,0 +1,5 @@
+// Exemple de tests en lingala (simplifié)
+
+elobi("Test Addition : " + (2 + 2))
+elobi("Test Soustraction : " + (5 - 3))
+elobi("Test Condition : " + ok)

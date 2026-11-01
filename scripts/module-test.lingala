@@ -1,0 +1,8 @@
+// Test du système de modules
+
+kokota {saluer, calculer} na "./utilitaires.lingala"
+
+saluer("Jean")
+saluer("Marie")
+
+elobi "Test des modules réussi !"

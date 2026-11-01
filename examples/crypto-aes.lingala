@@ -1,0 +1,14 @@
+// Exemple 1 : Chiffrement AES-256
+// Sécurisation des communications classifiées
+
+sangisa { crypterAES } depuis "crypto-armee";
+
+tanga crypteur = crypterAES("cle-secrete-operation-alpha");
+tanga message = "INFORMATIONS CLASSIFIÉES : Position des troupes sectoriel 7";
+tanga resultat = crypteur.chiffrer(message);
+
+elobi("Message chiffré : " + resultat.chiffre);
+elobi("IV : " + resultat.iv);
+
+tanga dechiffre = crypteur.dechiffrer(resultat.chiffre, resultat.iv);
+elobi("Message déchiffré : " + dechiffre);

@@ -1,0 +1,88 @@
+{
+  "name": "lingala-automation",
+  "version": "1.0.0",
+  "description": "LingalaAutomation - Langage de programmation complet en lingala pour automatisation, web, POO, bases de données et sécurité intégrée",
+  "main": "dist/cli.js",
+  "bin": {
+    "lingala": "./dist/cli.js"
+  },
+  "type": "module",
+  "author": "MUSABA MUNGWARI Victor <victor.musaba@lingala-automation.cd>",
+  "contributors": [
+    "MUSABA MUNGWARI Victor - Créateur et Propriétaire du langage LingalaAutomation",
+    "Ingénieur en Informatique de Gestion - République Démocratique du Congo"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "lingala",
+    "automation",
+    "dsl",
+    "programming-language",
+    "web",
+    "database",
+    "security",
+    "cryptography",
+    "authentication",
+    "rdc",
+    "congo",
+    "african-language",
+    "musaba-mungwari-victor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lingala-automation/lingala-automation"
+  },
+  "homepage": "https://github.com/lingala-automation/lingala-automation#readme",
+  "bugs": {
+    "url": "https://github.com/lingala-automation/lingala-automation/issues",
+    "email": "victor.musaba@lingala-automation.cd"
+  },
+  "scripts": {
+    "scripts": [
+      "dist/cli-standalone.js",
+      "dist/cli.js",
+      "dist/cli-fast.js",
+      "dist/compiler.js",
+      "dist/lexer.js",
+      "dist/parser.js",
+      "dist/codeGenerator.js",
+      "dist/typeChecker.js",
+      "dist/cache.js",
+      "dist/crypto-armee.js",
+      "dist/auth-armee.js",
+      "dist/intel-armee.js",
+      "dist/sourceMap.js",
+      "dist/errorTranslator.js",
+      "dist/enhancedErrorHandler.js",
+      "dist/automation.js",
+      "dist/types.js",
+      "dist/classes.js",
+      "dist/http.js",
+      "dist/html.js",
+      "dist/server.js",
+      "dist/css.js",
+      "dist/errors.js",
+      "dist/database.js",
+      "dist/templates.js",
+      "dist/testing.js",
+      "dist/standards.js",
+      "dist/runtime.js"
+    ],
+    "assets": [
+      "package.json"
+    ],
+    "targets": [
+      "node22-win-x64",
+      "node22-linux-x64",
+      "node22-macos-x64"
+    ],
+    "outputPath": "build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@yao-pkg/pkg": "^6.24.0",
+    "javascript-obfuscator": "^5.9.0",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2"
+  }
+}

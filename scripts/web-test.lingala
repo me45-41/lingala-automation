@@ -1,0 +1,8 @@
+// Test des fonctionnalités web de LingalaAutomation
+
+elobi "=== Test Web ==="
+
+// Exemple : Faire une requête HTTP
+tanga url = "https://jsonplaceholder.typicode.com/posts/1"
+
+koyoka(url)

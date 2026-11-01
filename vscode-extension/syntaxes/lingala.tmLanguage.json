@@ -1,0 +1,80 @@
+{
+  "scopeName": "source.lingala",
+  "patterns": [
+    {
+      "comment": "Comments",
+      "match": "//.*$",
+      "name": "comment.line.double-slash.lingala"
+    },
+    {
+      "comment": "Strings",
+      "match": "\"(?:\\\\.|[^\"\\\\])*\"",
+      "name": "string.quoted.double.lingala"
+    },
+    {
+      "comment": "Strings",
+      "match": "'(?:\\\\.|[^'\\\\])*'",
+      "name": "string.quoted.single.lingala"
+    },
+    {
+      "comment": "Keywords - Variables",
+      "match": "\\b(tanga)\\b",
+      "name": "keyword.declaration.variable.lingala"
+    },
+    {
+      "comment": "Keywords - Control Flow",
+      "match": "\\b(soki|soki te|susa|tantike|mpo na moko na moko)\\b",
+      "name": "keyword.control.lingala"
+    },
+    {
+      "comment": "Keywords - Functions",
+      "match": "\\b(mosala|zonga)\\b",
+      "name": "keyword.function.lingala"
+    },
+    {
+      "comment": "Keywords - Classes",
+      "match": "\\b(klasi|mbotaka)\\b",
+      "name": "keyword.class.lingala"
+    },
+    {
+      "comment": "Keywords - Boolean",
+      "match": "\\b(ok|te)\\b",
+      "name": "constant.language.boolean.lingala"
+    },
+    {
+      "comment": "Keywords - Block",
+      "match": "\\b(banda)\\b",
+      "name": "keyword.block.lingala"
+    },
+    {
+      "comment": "Keywords - Display",
+      "match": "\\b(elobi)\\b",
+      "name": "keyword.output.lingala"
+    },
+    {
+      "comment": "Automation Functions",
+      "match": "\\b(kosala|luka|longola|kokisa|sukisa|bongoliKombo|botia|kokomisa|koyoka|salisa|kozinga|mbula|makomi)\\b",
+      "name": "support.function.automation.lingala"
+    },
+    {
+      "comment": "Data Types",
+      "match": "\\b(libuka|diktionere|tupple|ensemble)\\b",
+      "name": "storage.type.lingala"
+    },
+    {
+      "comment": "Numbers",
+      "match": "\\b\\d+\\.?\\d*\\b",
+      "name": "constant.numeric.lingala"
+    },
+    {
+      "comment": "Class Names",
+      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+      "name": "entity.name.type.class.lingala"
+    },
+    {
+      "comment": "Function Calls",
+      "match": "\\b[a-z_][a-zA-Z0-9_]*\\s*(?=\\()",
+      "name": "entity.name.function.lingala"
+    }
+  ]
+}

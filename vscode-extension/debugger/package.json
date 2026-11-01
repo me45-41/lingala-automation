@@ -1,0 +1,22 @@
+{
+  "name": "lingala-debugger",
+  "description": "Debug Adapter pour LingalaAutomation",
+  "version": "1.0.0",
+  "author": "LingalaAutomation",
+  "license": "MIT",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "@vscode/debugadapter": "^1.56.0",
+    "@vscode/debugprotocol": "^1.56.0"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

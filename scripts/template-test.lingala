@@ -1,0 +1,9 @@
+// Test des templates web avancés
+
+tanga templateHTML = "<h1>{{titre}}</h1><p>{{message}}</p>"
+
+tanga template = templates.Kinongo.kobima(templateHTML)
+template.ekokele("titre", "Mbote na LingalaAutomation")
+template.ekokele("message", "Bienvenue dans notre langage")
+
+elobi template.koboma()

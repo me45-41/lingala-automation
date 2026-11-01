@@ -1,0 +1,25 @@
+// Test complet des exceptions personnalisées
+
+essayer banda
+    elobi "Test des exceptions personnalisées"
+
+    // Simuler une erreur de fichier
+    tanga fichierExiste = te
+
+    soki (fichierExiste == te) banda
+        sangisa("Fichier introuvable", "FILE_NOT_FOUND")
+    susa
+
+    elobi "Ce message ne s'affichera pas"
+
+kanga erreur banda
+    elobi "Type d'erreur : " + erreur.name
+    elobi "Message : " + erreur.message
+    soki (erreur.code != undefined) banda
+        elobi "Code d'erreur : " + erreur.code
+    susa
+
+misusu banda
+    elobi "Nettoyage des ressources..."
+
+elobi "Test terminé avec succès"

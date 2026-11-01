@@ -1,0 +1,21 @@
+// Exemple 2 : Signatures Numériques RSA
+// Authentification et non-répudiation des documents officiels
+
+sangisa { crypterRSA } depuis "crypto-armee";
+
+tanga rsa = crypterRSA(4096);
+tanga document = "ORDRE OPÉRATIONNEL #RC-2024-001 : Déploiement sectoriel 7";
+tanga signature = rsa.signer(document);
+
+elobi("Document : " + document);
+elobi("Signature : " + signature);
+
+tanga clePublique = rsa.exporterClePublique();
+elobi("Clé publique : " + clePublique);
+
+tanga valide = rsa.verifierSignature(document, signature);
+soki valide banda
+  elobi("✓ Signature VALIDÉE - Document authentique");
+} soki te banda
+  elobi("✗ Signature INVALIDE - Document falsifié");
+}

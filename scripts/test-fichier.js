@@ -1,0 +1,29 @@
+import * as automation from "./automation.js";
+import { Libuka, Diktionere, Tupple, Ensemble } from "./types.js";
+import * as http from "./http.js";
+import * as html from "./html.js";
+import * as server from "./server.js";
+import * as css from "./css.js";
+import * as database from "./database.js";
+import * as templates from "./templates.js";
+import * as testing from "./testing.js";
+import * as standards from "./standards.js";
+import { LingalaRuntime } from "./runtime.js";
+import { sangisa } from "./errors.js";
+
+(async () => {
+  try {
+
+    let message = "Mbote na LingalaAutomation !";
+    let fichier = "E:/gestion/lingala-automation/test.txt";
+    console.log(message);
+    await automation.kosala(fichier, message);
+    let date = await automation.mbula();
+    console.log(date);
+    if ((automation.koyoka(fichier))) {
+      console.log("Fichier créé avec succès !");
+    }
+  } catch (error) {
+    console.error('Erreur:', error);
+  }
+})();

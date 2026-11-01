@@ -1,0 +1,16 @@
+tanga nombre mboka Number = 42;
+tanga texte mboka String = "Bonjour";
+tanga actif mboka Boolean = ok;
+
+tanga resultat mboka Number = nombre + 10;
+
+soki nombre > 20 banda
+  elobi("Nombre est supérieur a 20");
+}
+
+mosala additionner(a mboka Number, b mboka Number) banda
+  zonga a + b;
+}
+
+tanga somme mboka Number = additionner(5, 3);
+elobi("Somme: " + somme);

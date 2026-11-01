@@ -1,0 +1,9 @@
+// Test du Type Checker (simplifié)
+
+tanga nombre = 42
+tanga texte = "Bonjour"
+tanga vrai = ok
+
+tanga resultat = nombre + 10
+
+elobi "Nombre est supérieur à 20"

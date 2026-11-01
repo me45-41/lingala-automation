@@ -1,0 +1,107 @@
+{
+  "name": "lingala-automation",
+  "displayName": "LingalaAutomation",
+  "description": "Langage de programmation en lingala pour l'automatisation avec sécurité intégrée et support LSP complet",
+  "version": "2.0.0",
+  "publisher": "musaba-mungwari-victor",
+  "author": "MUSABA MUNGWARI Victor <victor.musaba@lingala-automation.cd>",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:lingala"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "lingala",
+      "aliases": ["Lingala", "lingala"],
+      "extensions": [".lingala"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "lingala",
+      "scopeName": "source.lingala",
+      "path": "./syntaxes/lingala.tmLanguage.json"
+    }],
+    "icons": {
+      "default": "./logo.png",
+      "large": "./logo.png"
+    },
+    "debuggers": [{
+      "type": "lingala",
+      "label": "LingalaAutomation Debug",
+      "program": "./debugger/out/debugAdapter.js",
+      "runtime": "node",
+      "configurationAttributes": {
+        "launch": {
+          "required": ["program"],
+          "properties": {
+            "program": {
+              "type": "string",
+              "description": "Fichier .lingala à déboguer"
+            },
+            "noDebug": {
+              "type": "boolean",
+              "description": "Lancer sans débogage",
+              "default": false
+            },
+            "runtime": {
+              "type": "string",
+              "description": "Runtime à utiliser (par défaut: node)",
+              "default": "node"
+            },
+            "cwd": {
+              "type": "string",
+              "description": "Répertoire de travail"
+            }
+          }
+        }
+      }
+    }],
+    "configuration": {
+      "title": "LingalaAutomation",
+      "properties": {
+        "lingala.obfuscateLevel": {
+          "type": "string",
+          "enum": ["basique", "moyen", "eleve", "extreme"],
+          "default": "moyen",
+          "description": "Niveau d'obfuscation par défaut"
+        },
+        "lingala.enableLinting": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activer le linting automatique"
+        },
+        "lingala.enableFormatting": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activer le formatage automatique"
+        },
+        "lingala.typeChecking": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activer la validation des types"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile:extension && npm run compile:server && npm run compile:debugger",
+    "compile:extension": "tsc -p ./",
+    "compile:server": "cd server && npm run compile",
+    "compile:debugger": "cd debugger && npm run compile",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.15.0",
+    "vscode-languageclient": "^9.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+// Script de test pour LingalaAutomation
+// Créer un fichier de test
+
+tanga message = "Mbote na LingalaAutomation !"
+tanga fichier = "E:/gestion/lingala-automation/test.txt"
+
+elobi message
+
+// Créer le fichier
+kosala(fichier, message)
+
+// Afficher la date actuelle
+tanga date = mbula()
+elobi date
+
+// Vérifier si le fichier existe
+soki (koyoka(fichier)) banda
+    elobi "Fichier créé avec succès !"
+susa

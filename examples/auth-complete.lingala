@@ -1,0 +1,33 @@
+// Exemple 1 : Système d'Authentification Complet
+// Enregistrement et authentification avec 2FA
+
+sangisa { SystemeAuthentification } depuis "auth-armee";
+
+tanga auth = nouveau SystemeAuthentification();
+
+// Enregistrer un agent de renseignement
+elobi("Enregistrement de l'agent...");
+auth.enregistrerUtilisateur({
+  id: "AGENT-ALPHA-001",
+  nom: "Agent Kabila",
+  identifiant: "kabila.alpha",
+  role: "INTEL",
+  permissions: []
+}, "MotDePasseUltraSecurite!2024");
+
+// Activer le 2FA
+elobi("Activation du 2FA...");
+tanga secret2FA = auth.activer2FA("AGENT-ALPHA-001");
+elobi("Secret 2FA : " + secret2FA);
+elobi("Sauvegardez ce secret dans votre application authentificateur");
+
+// Authentifier (en production, l'utilisateur entre son mot de passe et code 2FA)
+elobi("Simulation d'authentification...");
+tanga resultat = auth.authentifier("kabila.alpha", "MotDePasseUltraSecurite!2024", "123456");
+
+soki resultat.succes banda
+  elobi("✓ Authentification réussie !");
+  elobi("Session ID : " + resultat.session);
+} soki te bande
+  elobi("✗ Échec de l'authentification : " + resultat.erreur);
+}

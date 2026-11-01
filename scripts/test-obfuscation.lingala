@@ -1,0 +1,19 @@
+// Test d'obfuscation de code
+// Ce script démontre l'obfuscation
+
+tanga secret = "ma-cle-secrete";
+tanga nom = "Alice";
+tanga age = 25;
+
+mosala afficher(msg) banda
+  elobi(msg);
+}
+
+mosala calculer(a, b) banda
+  zonga a + b;
+}
+
+afficher("Mbote, " + nom);
+afficher("Age : " + age);
+tanga resultat = calculer(10, 20);
+afficher("Résultat : " + resultat);

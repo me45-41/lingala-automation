@@ -1,0 +1,16 @@
+tanga nombre = 42;
+tanga texte = "Bonjour";
+tanga vrai = ok;
+
+tanga resultat = nombre + 10;
+
+soki nombre > 20 banda
+  elobi "Nombre est supérieur à 20";
+}
+
+mosala additionner(a, b) banda
+  zonga a + b;
+}
+
+tanga somme = additionner(5, 3);
+elobi "Somme: " + somme;

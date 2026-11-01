@@ -1,0 +1,25 @@
+tanga nombre = 42;
+tanga texte = "Bonjour";
+tanga actif = ok;
+
+tanga resultat = nombre + 10;
+
+soki nombre > 20 banda
+  elobi("Nombre est supérieur à 20");
+}
+
+soki nombre < 50 te banda
+  elobi("Nombre est inférieur à 50");
+}
+
+tantike nombre > 0 banda
+  elobi(nombre);
+  nombre = nombre - 1;
+}
+
+mosala multiplier(a, b) banda
+  zonga a * b;
+}
+
+tanga produit = multiplier(5, 3);
+elobi("Produit: " + produit);

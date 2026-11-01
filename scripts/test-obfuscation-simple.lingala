@@ -1,0 +1,6 @@
+// Test d'obfuscation de code (syntaxe simple)
+tanga secret = "ma-cle-secrete"
+tanga nom = "Alice"
+tanga age = 25
+elobi("Mbote, " + nom)
+elobi("Age : " + age)

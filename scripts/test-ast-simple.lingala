@@ -1,0 +1,4 @@
+tanga x = 10;
+tanga y = 20;
+tanga z = x + y;
+elobi(z);

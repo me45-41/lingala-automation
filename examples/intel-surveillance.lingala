@@ -1,0 +1,62 @@
+// Exemple 1 : Système de Surveillance de Sécurité
+// Monitoring et détection d'anomalies en temps réel
+
+sangisa { SystemeIntelligenceSecurite } depuis "intel-armee";
+
+tanga intel = nouveau SystemeIntelligenceSecurite("cle-signature-operation-alpha");
+
+// Simulation d'événements de sécurité
+elobi("=== SURVEILLANCE OPÉRATIONNELLE ===");
+
+// Enregistrement des authentifications
+intel.enregistrerEvenement({
+  type: "AUTHENTIFICATION",
+  niveau: "HAUT",
+  source: "SYSTEME_LOGIN",
+  utilisateurId: "COMMANDANT-001",
+  ip: "192.168.1.50",
+  donnees: { succes: ok }
+});
+
+intel.enregistrerEvenement({
+  type: "AUTHENTIFICATION",
+  niveau: "HAUT",
+  source: "SYSTEME_LOGIN",
+  utilisateurId: "OFFICIER-002",
+  ip: "192.168.1.51",
+  donnees: { succes: ok }
+});
+
+// Échec d'authentification suspect
+intel.enregistrerEvenement({
+  type: "AUTHENTIFICATION",
+  niveau: "CRITIQUE",
+  source: "SYSTEME_LOGIN",
+  utilisateurId: "INCONNU",
+  ip: "192.168.100.200",
+  donnees: { succes: te, raison: "mot_de_passe_incorrect" }
+});
+
+intel.enregistrerEvenement({
+  type: "AUTHENTIFICATION",
+  niveau: "CRITIQUE",
+  source: "SYSTEME_LOGIN",
+  utilisateurId: "INCONNU",
+  ip: "192.168.100.200",
+  donnees: { succes: te, raison: "mot_de_passe_incorrect" }
+});
+
+// Analyse des événements
+tanga logs = intel.getLogs().exporterLogs();
+elobi("Événements enregistrés : " + logs.length);
+
+// Détection d'anomalies
+tanga anomalies = intel.getAnomalies().detecterEchecsAuthentification(logs);
+elobi("Anomalies détectées : " + anomalies.length);
+
+soki anomalies.length > 0 banda
+  elobi("⚠️ ANOMALIES DÉTECTÉES !");
+  mpo na moko na moko(anomalie mboka anomalies) banda
+    elobi("  - " + anomalie.description);
+  }
+}

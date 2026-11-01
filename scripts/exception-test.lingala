@@ -1,0 +1,21 @@
+// Test de la gestion d'exceptions
+
+essayer banda
+    elobi "Début du bloc essayer"
+
+    tanga x = 10
+    tanga y = 0
+
+    soki (y == 0) banda
+        sangisa("Division par zéro impossible !")
+    susa
+
+    elobi "Ce message ne s'affichera pas"
+
+kanga erreur banda
+    elobi "Erreur attrapée : " + erreur.message
+
+misusu banda
+    elobi "Bloc finally toujours exécuté"
+
+elobi "Programme continué après l'exception"

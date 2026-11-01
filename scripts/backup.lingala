@@ -1,0 +1,23 @@
+// Script de backup automatique avec LingalaAutomation
+// Créer un dossier de backup
+
+tanga source = "E:/gestion/lingala-automation/scripts"
+tanga destination = "E:/gestion/lingala-automation/backup"
+
+elobi "Début du backup..."
+
+// Créer le dossier de destination
+botia(destination)
+
+// Vérifier si le dossier source existe
+soki (koyoka(source)) banda
+    elobi "Dossier source trouvé"
+
+    // Lister les fichiers
+    tanga fichiers = kokomisa(source)
+    elobi "Fichiers trouvés : " + fichiers
+
+    elobi "Backup terminé avec succès !"
+soki te banda
+    elobi "Erreur : dossier source introuvable"
+susa

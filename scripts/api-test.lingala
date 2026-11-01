@@ -1,0 +1,11 @@
+// Test de création d'API REST (simplifié - sans serveur)
+
+klasi ApiHandler banda
+  mosala saluer() banda
+    zonga "Mbote na LingalaAutomation API !"
+  susa
+susa
+
+tanga handler = ApiHandler()
+tanga resultat = handler.saluer()
+elobi("Résultat : " + resultat)

@@ -1,0 +1,21 @@
+// Test des classes en LingalaAutomation - Syntaxe simplifiée
+// Note: Dans les méthodes, utilisez "this." pour accéder aux propriétés
+
+elobi "=== Test des Classes ==="
+
+klasi Muntu banda
+  mbotaka kombo, age banda
+    kombo = kombo
+    age = age
+  susa
+
+  mosala saluer() banda
+    elobi "Mbote, nazali " + this.kombo + " mpo na " + this.age + " ans"
+  susa
+susa
+
+// Créer une instance
+tanga jean = Muntu("Jean", 25)
+
+elobi "\n=== Test des Instances ==="
+jean.saluer()

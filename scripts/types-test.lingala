@@ -1,0 +1,36 @@
+// Test des types de données avancés
+
+elobi "=== Test des Listes (Libuka) ==="
+
+tanga liste = libuka[1, 2, 3, 4, 5]
+elobi "Liste créée : " + liste
+
+liste.kota(6)
+elobi "Après ajout : " + liste
+
+elobi "Longueur : " + liste.bokoni()
+elobi "Premier élément : " + liste.kozwa(0)
+
+elobi "\n=== Test des Dictionnaires (Diktionere) ==="
+
+tanga personne = diktionere{kombo: "Jean", mbula: 25, mboka: "Kinshasa"}
+elobi "Dictionnaire créé : " + personne
+
+elobi "Nom : " + personne.kozwa("kombo")
+elobi "La clé 'kombo' existe ? " + personne.koyoka("kombo")
+
+elobi "\n=== Test des Tuples (Tupple) ==="
+
+tanga coordonnees = tupple(10, 20, 30)
+elobi "Tuple créé : " + coordonnees
+
+elobi "Longueur : " + coordonnees.bokoni()
+elobi "Première valeur : " + coordonnees.kozwa(0)
+
+elobi "\n=== Test des Ensembles (Ensemble) ==="
+
+tanga unique = ensemble{1, 2, 3, 2, 1}
+elobi "Ensemble créé : " + unique
+
+elobi "Longueur : " + unique.bokoni()
+elobi "Contient 2 ? " + unique.koyoka(2)

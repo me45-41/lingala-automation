@@ -1,0 +1,9 @@
+// Module utilitaires
+
+salisa mosala saluer(nom) banda
+    elobi "Mbote, " + nom + " !"
+susa
+
+salisa mosala calculer(a, b) banda
+    zonga a + b
+susa

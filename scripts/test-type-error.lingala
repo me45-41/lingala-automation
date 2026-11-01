@@ -1,0 +1,5 @@
+tanga nombre mboka Number = 42;
+tanga texte mboka String = "Bonjour";
+
+// Cela devrait générer une erreur de type
+tanga erreur mboka Number = "ceci est une chaine";

@@ -1,0 +1,29 @@
+// Bibliothèque de chaînes de caractères en lingala
+
+salisa mosala kofuta(mongo) banda
+    zonga mongo.length
+susa
+
+salisa mosala kokotaMbote(mongo, sousMongo) banda
+    zonga mongo.includes(sousMongo)
+susa
+
+salisa mosala kobongolaKombo(mongo, vieux, nouveau) banda
+    zonga mongo.replace(vieux, nouveau)
+susa
+
+salisa mosala koyombaMonene(mongo) banda
+    zonga mongo.toUpperCase()
+susa
+
+salisa mosala koyombaMoke(mongo) banda
+    zonga mongo.toLowerCase()
+susa
+
+salisa mosala kokotaSe(mongo) banda
+    zonga mongo.trim()
+susa
+
+salisa mosala kobimbisa(mongo, separateur) banda
+    zonga mongo.split(separateur)
+susa

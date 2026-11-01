@@ -1,0 +1,11 @@
+// Test de la bibliothèque de chaînes
+
+kokota {kofuta, kokotaMbote, kobongolaKombo, koyombaMonene, kokotaSe} na "../lib/lib-mongo.lingala"
+
+tanga texte = "  Mbote na LingalaAutomation  "
+
+elobi "Longueur : " + kofuta(texte)
+elobi "Contient 'Lingala' : " + kokotaMbote(texte, "Lingala")
+elobi "Remplacer 'Mbote' par 'Bonsoir' : " + kobongolaKombo(texte, "Mbote", "Bonsoir")
+elobi "Majuscules : " + koyombaMonene(texte)
+elobi "Sans espaces : " + kokotaSe(texte)

@@ -1,0 +1,29 @@
+// Test de l'héritage de classes
+
+klasi Muntu banda
+  mbotaka kombo banda
+    kombo = kombo
+  susa
+
+  mosala saluer() banda
+    elobi "Mbote, je suis " + this.kombo
+  susa
+susa
+
+klasi Etudiant bika Muntu banda
+  mbotaka kombo, filiere banda
+    super(kombo)
+    filiere = filiere
+  susa
+
+  mosala etudier() banda
+    elobi this.kombo + " étudie " + this.filiere
+  susa
+susa
+
+tanga jean = Muntu("Jean")
+jean.saluer()
+
+tanga marie = Etudiant("Marie", "Informatique")
+marie.saluer()
+marie.etudier()
